@@ -1,14 +1,12 @@
 import React from 'react';
-import Rating from 'react-verdict';
+import Rating from '../src/RatingDisplay';
 
-const ParentComponent = () => {
+const Examples = () => {
   return (
     <div>
       <Rating rating={2.4} />
     </div>
   );
 };
-
-<ParentComponent />;
 
 export default Examples;
