@@ -1,5 +1,3 @@
-The button radius can be set with the `buttonRadius` prop. The value of buttonPinRadius will be forced into the range [1, Math.floor(0.5 * width)].
-
 ```jsx
 import React, { useState } from 'react';
 import Rating from 'react-verdict';
@@ -71,7 +69,7 @@ const ParentComponent = () => {
     <div>
       <Rating rating={2.4} />
 
-      <RatingDisplay
+      <Rating
         className="rating-svg-circles"
         rating={2.4}
         starRenderer={customStarRenderer}

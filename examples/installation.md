@@ -1,4 +1,4 @@
-To install `react-switch-input` run:
+To install `react-verdict` run:
 
 ```js static
 npm i ...
