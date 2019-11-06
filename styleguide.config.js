@@ -45,13 +45,34 @@ module.exports = {
       // components: 'dist/ui/*.js',
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      sectionDepth: 1,
+      // sectionDepth: 1,
       // content: 'examples/Examples.md',
 
       sections: [
         {
+          name: 'Default',
+          content: 'examples/Examples_default.md',
+        },
+        {
+          name: 'Font-size',
+          content: 'examples/Examples_fontSize.md',
+        },
+        {
+          name: 'Number of stars',
+          content: 'examples/Examples_numberStars.md',
+        },
+        {
+          name: 'Show Rating on Hover',
+          content: 'examples/Examples_hoverRating.md',
+        },
+
+        {
           name: 'Custom Star',
           content: 'examples/Examples_customStar.md',
+        },
+        {
+          name: 'Custom Star with Animation',
+          content: 'examples/Examples_customStarAnimated.md',
         },
         // {
         //   name: 'XXX',
