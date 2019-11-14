@@ -3,6 +3,21 @@ const fs = require('fs');
 const wpc = require('./config/webpack-prod-config.js');
 
 module.exports = {
+  theme: {
+    fontFamily: {
+      base: '"Montserrat", sans-serif',
+    },
+    fontSize: {
+      h1: 35,
+      h2: 22,
+      h3: 18,
+    },
+    color: {
+      link: 'firebrick',
+      linkHover: 'salmon',
+      base: 'darkgray',
+    },
+  },
   getExampleFilename(componentPath) {
     if (componentPath.indexOf('src') > -1) {
       return componentPath.replace(/src/, 'examples').replace(/\.jsx?$/, '.md');
@@ -44,9 +59,9 @@ module.exports = {
       name: 'Examples',
       // components: 'dist/ui/*.js',
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
-      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      // sectionDepth: 1,
-      // content: 'examples/Examples.md',
+      usageMode: 'hide', // 'hide' | 'collapse' | 'expand'
+      sectionDepth: 1,
+      content: 'examples/Examples.md',
 
       sections: [
         {
