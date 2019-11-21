@@ -1,12 +1,31 @@
+// @flow
 import * as React from 'react';
 import styled from 'styled-components';
 import classnames from 'classnames';
 
-const defaultStarRenderer = () => {
+const defaultStarRenderer = (): React.Node => {
   return String.fromCharCode(9733);
 };
 
-const RatingDisplayStar = ({ className, rating, index, starRenderer }) => {
+type StarRendererFunctionProps = {|
+  rating: number,
+  index: number,
+  className: 'colored' | 'uncolored',
+  active?: boolean,
+|};
+type StarRendererFunction = (StarRendererFunctionProps) => React.Node;
+type StarProps = {|
+  className: string,
+  rating: number,
+  index: number,
+  starRenderer: StarRendererFunction,
+|};
+const RatingDisplayStar = ({
+  className,
+  rating,
+  index,
+  starRenderer,
+}: StarProps) => {
   const colored = rating > index;
 
   return (
@@ -51,6 +70,14 @@ const StyledRatingDisplayStar = styled(RatingDisplayStar)`
   //   }
 `;
 
+type RatingDisplayProps = {|
+  className: string,
+  rating: number,
+  numberStars: number,
+  fontSize: number,
+  starRenderer: StarRendererFunction,
+  showRatingOnHover: boolean,
+|};
 const RatingDisplay = ({
   className,
   rating,
@@ -58,7 +85,7 @@ const RatingDisplay = ({
   fontSize: fontSizeProp,
   starRenderer: starRendererProp,
   showRatingOnHover = false,
-}) => {
+}: RatingDisplayProps) => {
   //
   const numberStars = numberStarsProp || 5;
   const fontSize = fontSizeProp || 34;

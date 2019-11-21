@@ -1,6 +1,6 @@
-`react-verdict`
+`react-verdict` exports a star-rating display as its default export. 
 
-This is the component with its default prop values:
+With its default prop values, the component looks like this:
 
 ```jsx
 import Rating from 'react-verdict';

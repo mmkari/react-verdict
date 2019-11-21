@@ -42,19 +42,14 @@ module.exports = {
         },
       ],
     },
-    // {
-    //   name: 'Components',
-    //   // content: 'examples/Components.md',
-    //   usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-    //   components: ['src/RatingDisplay.jsx'],
-    //   skipComponentsWithoutExample: true,
-    //   // sectionDepth: 1,
-    // },
-    // {
-    //   name: 'Demo',
-    //   content: 'examples/Examples_demo.md',
-    //   usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-    // },
+    {
+      name: 'Components',
+      // content: 'examples/Components.md',
+      usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
+      components: ['src/RatingDisplay.jsx'],
+      skipComponentsWithoutExample: true,
+      // sectionDepth: 1,
+    },
     {
       name: 'Examples',
       // components: 'dist/ui/*.js',
