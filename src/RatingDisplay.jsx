@@ -59,41 +59,42 @@ const StyledRatingDisplayStar = styled(RatingDisplayStar)`
   .RatingDisplayStar-partial {
     position: absolute;
     width: ${({ rating, index }) => Math.min(rating - index, 1) * 100}%;
-    // width: 50%;
     z-index: 11;
     overflow: hidden;
     color: orange;
   }
+`;
 
-  //   &.colored {
-  //     color: yellow;
-  //   }
+const StarContainer = styled.div`
+  display: flex;
 `;
 
 type RatingDisplayProps = {|
-  className: string,
-  rating: number,
+  /** custom class name */
+  className?: string,
+  /** value of the display */
+  rating?: number,
+  /** number of stars */
   numberStars: number,
+  /** font-size of stars in pixels (when using default renderer) */
   fontSize: number,
-  starRenderer: StarRendererFunction,
-  showRatingOnHover: boolean,
+  /** prop to override default renderer */
+  starRenderer?: StarRendererFunction,
+  /** shows rating value in a "title" attribute on hover */
+  showRatingOnHover?: boolean,
 |};
 const RatingDisplay = ({
   className,
-  rating,
-  numberStars: numberStarsProp,
-  fontSize: fontSizeProp,
+  rating = 0,
+  numberStars = 5,
+  fontSize = 34,
   starRenderer: starRendererProp,
   showRatingOnHover = false,
 }: RatingDisplayProps) => {
-  //
-  const numberStars = numberStarsProp || 5;
-  const fontSize = fontSizeProp || 34;
-
   const starRenderer = starRendererProp || defaultStarRenderer;
 
   return (
-    <div
+    <StarContainer
       className={classnames('RatingDisplay', className)}
       title={showRatingOnHover ? rating : undefined}
     >
@@ -108,13 +109,8 @@ const RatingDisplay = ({
           />
         );
       })}
-    </div>
+    </StarContainer>
   );
 };
 
-const StyledRatingDisplay = styled(RatingDisplay)`
-  display: flex;
-  //   position: relative;
-`;
-
-export default StyledRatingDisplay;
+export default RatingDisplay;

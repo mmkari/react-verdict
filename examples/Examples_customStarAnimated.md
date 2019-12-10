@@ -34,11 +34,9 @@ const fadeIn = keyframes`
 const colorFill = keyframes`
   0% {
     width: 0;
-    // opacity: 0;
   }
   100% {
     width: 100%;
-    // opacity: 100%;
   }
 `;
 

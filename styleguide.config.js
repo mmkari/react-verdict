@@ -55,8 +55,8 @@ module.exports = {
       // components: 'dist/ui/*.js',
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
       usageMode: 'hide', // 'hide' | 'collapse' | 'expand'
-      sectionDepth: 1,
-      content: 'examples/Examples.md',
+      // sectionDepth: 1,
+      // content: 'examples/Examples.md',
 
       sections: [
         {
