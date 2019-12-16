@@ -1,12 +1,17 @@
 ```jsx
 import React, { useState } from 'react';
 import Rating from 'react-verdict';
+import classnames from 'classnames';
 
 import styled, { keyframes } from 'styled-components';
 
-const CustomStarRendererStar = ({ color, className, index, active }) => {
+const CustomStarRendererStar = ({className, color, index, type }) => {
   return (
-    <div className={className}>
+    <div 
+      className={classnames('CustomStarRendererStar', className, {
+        colored: type === 'front',
+      })}
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="34"
@@ -16,7 +21,7 @@ const CustomStarRendererStar = ({ color, className, index, active }) => {
         <path
           strokeWidth="0.9"
           d="m92.1 0c7.2 22.3 14.5 44.6 21.7 66.9 23.4 0 46.9 0 70.3 0-19 13.8-37.9 27.6-56.9 41.3 7.2 22.3 14.5 44.6 21.7 66.9C130 161.3 111 147.6 92.1 133.8 73.1 147.6 54.1 161.3 35.2 175.1 42.4 152.8 49.7 130.5 56.9 108.2 37.9 94.5 19 80.7 0 66.9 23.4 66.9 46.9 66.9 70.3 66.9 77.6 44.6 84.8 22.3 92.1 0Z"
-          fill={active ? 'orange' : 'darkgray'}
+          fill={type === 'front' ? 'orange' : 'darkgray'}
         />
       </svg>
     </div>
@@ -49,13 +54,13 @@ const StyledCustomStarRendererStar = styled(CustomStarRendererStar)`
   &.colored {
     width: 0; // start state for animation
     overflow: hidden;
-    animation: ${colorFill} ${({ index, rating }) =>
-        Math.min(rating - index, 1) * (animationLength / rating)}s;
-    animation-timing-function: ${({ index, rating }) =>
-      rating - index < 1 ? 'cubic-bezier(0,0,0,1)' : 'linear'};
+    animation: ${colorFill} ${({ index, value }) =>
+        Math.min(value - index, 1) * (animationLength / value)}s;
+    animation-timing-function: ${({ index, value }) =>
+      value - index < 1 ? 'cubic-bezier(0,0,0,1)' : 'linear'};
     animation-fill-mode: forwards;
-    animation-delay: ${({ index, rating }) =>
-      index * (animationLength / rating)}s;
+    animation-delay: ${({ index, value }) =>
+      index * (animationLength / value)}s;
   }
 `;
 const customStarRenderer = (props) => (
@@ -70,12 +75,12 @@ const ParentComponent = () => {
         onClick={() => setMounted(!mounted)}
         style={{ marginRight: '5px' }}
       >
-        Click to {mounted ? 'unmount' : 'mount'}
+        {`Click to ${mounted ? 'unmount' : 'mount'}`}
       </button>
       {mounted && (
         <Rating
           className="rating-svg-circles"
-          rating={2.4}
+          value={2.4}
           starRenderer={customStarRenderer}
           showRatingOnHover
         />

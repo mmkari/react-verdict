@@ -1,5 +1,5 @@
 ```jsx
 import Rating from 'react-verdict';
 
-<Rating rating={4.4} />;
+<Rating value={4.4} />;
 ```

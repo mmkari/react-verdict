@@ -8,43 +8,43 @@ const defaultStarRenderer = (): React.Node => {
 };
 
 type StarRendererFunctionProps = {|
-  rating: number,
+  /** current rating value */
+  value: number,
+  /** index of star */
   index: number,
-  className: 'colored' | 'uncolored',
-  active?: boolean,
+  /** type of star to be rendered (background or foreground star) */
+  type: 'front' | 'rear',
 |};
 type StarRendererFunction = (StarRendererFunctionProps) => React.Node;
 type StarProps = {|
   className: string,
-  rating: number,
+  /** current rating value */
+  value: number,
+  /** index of star */
   index: number,
+  /** star-renderer function */
   starRenderer: StarRendererFunction,
 |};
 const RatingDisplayStar = ({
   className,
-  rating,
+  value,
   index,
   starRenderer,
 }: StarProps) => {
-  const colored = rating > index;
+  const colored = value > index; // has colored front if rating exceeds index value
 
   return (
-    <div
-      className={classnames('RatingDisplayStar', className, {
-        colored,
-      })}
-    >
+    <div className={classnames('RatingDisplayStar', className)}>
       {colored && (
-        <span className="RatingDisplayStar-partial">
+        <span className="RatingDisplayStar-colored">
           {starRenderer({
-            rating,
+            value,
             index,
-            className: 'colored',
-            active: true,
+            type: 'front',
           })}
         </span>
       )}
-      {starRenderer({ rating, index, className: 'uncolored' })}
+      {starRenderer({ value, index, type: 'rear' })}
     </div>
   );
 };
@@ -56,9 +56,9 @@ const StyledRatingDisplayStar = styled(RatingDisplayStar)`
   z-index: 10;
   font-size: ${({ fontSize }) => fontSize}px;
 
-  .RatingDisplayStar-partial {
+  .RatingDisplayStar-colored {
     position: absolute;
-    width: ${({ rating, index }) => Math.min(rating - index, 1) * 100}%;
+    width: ${({ value, index }) => Math.min(value - index, 1) * 100}%;
     z-index: 11;
     overflow: hidden;
     color: orange;
@@ -72,8 +72,8 @@ const StarContainer = styled.div`
 type RatingDisplayProps = {|
   /** custom class name */
   className?: string,
-  /** value of the display */
-  rating?: number,
+  /** current rating value of the display */
+  value?: number,
   /** number of stars */
   numberStars: number,
   /** font-size of stars in pixels (when using default renderer) */
@@ -85,7 +85,7 @@ type RatingDisplayProps = {|
 |};
 const RatingDisplay = ({
   className,
-  rating = 0,
+  value = 0,
   numberStars = 5,
   fontSize = 34,
   starRenderer: starRendererProp,
@@ -96,13 +96,13 @@ const RatingDisplay = ({
   return (
     <StarContainer
       className={classnames('RatingDisplay', className)}
-      title={showRatingOnHover ? rating : undefined}
+      title={showRatingOnHover ? value : undefined}
     >
       {[...Array(numberStars).keys()].map((i) => {
         return (
           <StyledRatingDisplayStar
             key={`star-${i}`}
-            rating={rating}
+            value={value}
             index={i}
             fontSize={fontSize}
             starRenderer={starRenderer}

@@ -36,10 +36,10 @@ module.exports = {
           name: 'Installation',
           content: 'examples/installation.md',
         },
-        {
-          name: 'Configuration',
-          content: 'examples/configuration.md',
-        },
+        // {
+        //   name: 'Configuration',
+        //   content: 'examples/configuration.md',
+        // },
       ],
     },
     {
