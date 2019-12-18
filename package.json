@@ -1,6 +1,6 @@
 {
   "name": "react-verdict",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A customizable star rating display",
   "main": "dist/index.js",
   "files": [
