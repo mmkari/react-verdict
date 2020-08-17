@@ -1,3 +1,7 @@
 .RatingDisplay {
   display: flex;
+
+  --star-size: 34px; /* custom property value, set from RatingDisplay component */
+  --partial-percentage: 50%; /* custom property value, set from RatingDisplay component */
+  font-size: var(--star-size);
 }

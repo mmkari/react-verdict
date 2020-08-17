@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import styled from 'styled-components';
 import classnames from 'classnames';
 
 import './RatingDisplayStar.css';
@@ -23,7 +22,11 @@ const RatingDisplayStar = ({
   return (
     <div className={classnames('RatingDisplayStar', className)}>
       {colored && (
-        <span className="RatingDisplayStar-colored">
+        <span
+          className={classnames('RatingDisplayStar-colored', {
+            partial: value - index < 1,
+          })}
+        >
           {starRenderer({
             value,
             index,
@@ -36,20 +39,4 @@ const RatingDisplayStar = ({
   );
 };
 
-const StyledRatingDisplayStar = styled(RatingDisplayStar)`
-  //   position: relative;
-  //   align-self: center;
-  //   color: lightgray;
-  //   z-index: 10;
-  font-size: ${({ fontSize }) => fontSize}px;
-
-  .RatingDisplayStar-colored {
-    position: absolute;
-    width: ${({ value, index }) => Math.min(value - index, 1) * 100}%;
-    z-index: 11;
-    overflow: hidden;
-    color: orange;
-  }
-`;
-
-export default StyledRatingDisplayStar;
+export default RatingDisplayStar;

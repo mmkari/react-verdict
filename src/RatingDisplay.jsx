@@ -1,6 +1,5 @@
 // @flow
 import * as React from 'react';
-import styled from 'styled-components';
 import classnames from 'classnames';
 
 import './RatingDisplay.css';
@@ -26,11 +25,27 @@ const RatingDisplay = ({
   showRatingOnHover = false,
 }: RatingDisplayProps) => {
   const starRenderer = starRendererProp || defaultStarRenderer;
+  const inputRef = React.createRef<HTMLDivElement>();
+
+  React.useEffect(() => {
+    // set CSS custom property values for this component
+    if (inputRef.current) {
+      inputRef.current.style.setProperty(
+        '--star-size',
+        String(fontSize) + 'px'
+      );
+      inputRef.current.style.setProperty(
+        '--partial-percentage',
+        String((value % 1) * 100) + '%'
+      );
+    }
+  }, [fontSize, value]);
 
   return (
     <div
       className={classnames('RatingDisplay', className)}
       title={showRatingOnHover ? value : undefined}
+      ref={inputRef}
     >
       {[...Array(numberStars).keys()].map((i) => {
         return (

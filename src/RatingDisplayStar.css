@@ -3,4 +3,19 @@
   align-self: center;
   color: lightgray;
   z-index: 10;
+
+  font-size: var(--star-size);
+}
+
+.RatingDisplayStar-colored {
+  position: absolute;
+  width: 100%;
+
+  z-index: 11;
+  overflow: hidden;
+  color: orange;
+}
+
+.RatingDisplayStar-colored.partial {
+  width: var(--partial-percentage);
 }
