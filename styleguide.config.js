@@ -101,7 +101,7 @@ module.exports = {
   require: [path.join(__dirname, 'examples/Examples_overrides.css')],
   updateExample(props, exampleFilePath) {
     const { settings, lang } = props;
-    if (typeof settings.file === 'string') {
+    if (settings && typeof settings.file === 'string') {
       const filepath = path.resolve(exampleFilePath, settings.file);
       delete settings.file;
       return {
