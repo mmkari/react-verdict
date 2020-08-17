@@ -1,0 +1,7 @@
+.DefaultStarComponent {
+  color: lightgray;
+}
+
+.DefaultStarComponent.colored {
+  color: orange;
+}

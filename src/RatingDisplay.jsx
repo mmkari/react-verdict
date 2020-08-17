@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 import './RatingDisplay.css';
 import RatingDisplayStar from './RatingDisplayStar';
+import defaultStarRenderer from './defaultStarRenderer';
 
 import {
   StarRendererFunctionProps,
@@ -11,10 +12,6 @@ import {
   StarProps,
   RatingDisplayProps,
 } from './types';
-
-const defaultStarRenderer = (): React.Node => {
-  return String.fromCharCode(9733);
-};
 
 const RatingDisplay = ({
   className,
