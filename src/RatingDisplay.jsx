@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import classnames from 'classnames';
 
 import './RatingDisplay.css';
+import RatingDisplayStar from './RatingDisplayStar';
 
 import {
   StarRendererFunctionProps,
@@ -15,46 +16,6 @@ import {
 const defaultStarRenderer = (): React.Node => {
   return String.fromCharCode(9733);
 };
-
-const RatingDisplayStar = ({
-  className,
-  value,
-  index,
-  starRenderer,
-}: StarProps) => {
-  const colored = value > index; // has colored front if rating exceeds index value
-
-  return (
-    <div className={classnames('RatingDisplayStar', className)}>
-      {colored && (
-        <span className="RatingDisplayStar-colored">
-          {starRenderer({
-            value,
-            index,
-            type: 'front',
-          })}
-        </span>
-      )}
-      {starRenderer({ value, index, type: 'rear' })}
-    </div>
-  );
-};
-
-const StyledRatingDisplayStar = styled(RatingDisplayStar)`
-  position: relative;
-  align-self: center;
-  color: lightgray;
-  z-index: 10;
-  font-size: ${({ fontSize }) => fontSize}px;
-
-  .RatingDisplayStar-colored {
-    position: absolute;
-    width: ${({ value, index }) => Math.min(value - index, 1) * 100}%;
-    z-index: 11;
-    overflow: hidden;
-    color: orange;
-  }
-`;
 
 const RatingDisplay = ({
   className,
@@ -73,7 +34,7 @@ const RatingDisplay = ({
     >
       {[...Array(numberStars).keys()].map((i) => {
         return (
-          <StyledRatingDisplayStar
+          <RatingDisplayStar
             key={`star-${i}`}
             value={value}
             index={i}

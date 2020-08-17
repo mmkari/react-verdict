@@ -1,0 +1,6 @@
+.RatingDisplayStar {
+  position: relative;
+  align-self: center;
+  color: lightgray;
+  z-index: 10;
+}
