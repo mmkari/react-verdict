@@ -80,13 +80,7 @@ const ParentComponent = () => {
       >
         {`Click to ${mounted ? 'unmount' : 'mount'}`}
       </button>
-      {mounted && (
-        <Rating
-          value={2.4}
-          starRenderer={customStarRenderer}
-          showRatingOnHover
-        />
-      )}
+      {mounted && <Rating value={2.4} starRenderer={customStarRenderer} />}
     </div>
   );
 };
