@@ -5,7 +5,5 @@ import Rating from 'react-verdict';
 ```
 
 ```jsx static
-import Rating from 'react-verdict';
-
-<Rating value={2.4} />;
+<Rating value={2.4} />
 ```
