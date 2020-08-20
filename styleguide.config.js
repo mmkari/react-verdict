@@ -46,7 +46,7 @@ module.exports = {
       name: 'Components',
       // content: 'examples/Components.md',
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      components: ['src/RatingDisplay.jsx'],
+      components: ['src/RatingDisplay.tsx'],
       skipComponentsWithoutExample: true,
       // sectionDepth: 1,
     },
@@ -82,11 +82,11 @@ module.exports = {
           sections: [
             {
               name: 'simple',
-              content: 'examples/Examples_customStar.md',
+              content: 'examples/Props_starRenderer_simple.md',
             },
             {
               name: 'animated',
-              content: 'examples/Examples_customStarAnimated.md',
+              content: 'examples/Props_starRenderer_animated.md',
             },
           ],
         },
