@@ -20,7 +20,9 @@ module.exports = {
   },
   getExampleFilename(componentPath) {
     if (componentPath.indexOf('src') > -1) {
-      return componentPath.replace(/src/, 'examples').replace(/\.jsx?$/, '.md');
+      return componentPath
+        .replace(/src/, 'examples')
+        .replace(/\.[tj]sx?$/, '.md');
     }
     return componentPath;
   },
@@ -96,7 +98,7 @@ module.exports = {
     },
   ],
   webpackConfig: wpc,
-  components: 'src/**/*.{js,jsx}',
+  components: 'src/*.{ts,tsx}',
   styleguideDir: 'styleguidistHtml',
   pagePerSection: true,
   moduleAliases: {
