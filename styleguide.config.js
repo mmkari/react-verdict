@@ -34,7 +34,7 @@ module.exports = {
       sections: [
         {
           name: 'Installation',
-          content: 'examples/installation.md',
+          content: 'examples/Documentation_installation.md',
         },
         // {
         //   name: 'Configuration',
@@ -56,8 +56,6 @@ module.exports = {
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
       usageMode: 'hide', // 'hide' | 'collapse' | 'expand'
       // sectionDepth: 1,
-      // content: 'examples/Examples.md',
-
       sections: [
         {
           name: 'value',
@@ -78,7 +76,6 @@ module.exports = {
 
         {
           name: 'starRenderer',
-          // content: 'examples/Examples_customStar.md',
           sections: [
             {
               name: 'simple',
