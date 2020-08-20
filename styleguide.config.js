@@ -51,7 +51,7 @@ module.exports = {
       // sectionDepth: 1,
     },
     {
-      name: 'Examples',
+      name: 'Props',
       // components: 'dist/ui/*.js',
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
       usageMode: 'hide', // 'hide' | 'collapse' | 'expand'
@@ -60,29 +60,35 @@ module.exports = {
 
       sections: [
         {
-          name: 'Default',
-          content: 'examples/Examples_default.md',
+          name: 'value',
+          content: 'examples/Props_value.md',
         },
         {
-          name: 'Font-size',
-          content: 'examples/Examples_fontSize.md',
+          name: 'size',
+          content: 'examples/Props_size.md',
         },
         {
-          name: 'Number of stars',
-          content: 'examples/Examples_numberStars.md',
+          name: 'numberStars',
+          content: 'examples/Props_numberStars.md',
         },
         {
-          name: 'Show Rating on Hover',
-          content: 'examples/Examples_hoverRating.md',
+          name: 'showRatingOnHover',
+          content: 'examples/Props_showRatingOnHover.md',
         },
 
         {
-          name: 'Custom Star',
-          content: 'examples/Examples_customStar.md',
-        },
-        {
-          name: 'Custom Star with Animation',
-          content: 'examples/Examples_customStarAnimated.md',
+          name: 'starRenderer',
+          // content: 'examples/Examples_customStar.md',
+          sections: [
+            {
+              name: 'simple',
+              content: 'examples/Examples_customStar.md',
+            },
+            {
+              name: 'animated',
+              content: 'examples/Examples_customStarAnimated.md',
+            },
+          ],
         },
         // {
         //   name: 'XXX',
