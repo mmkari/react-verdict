@@ -3,25 +3,22 @@
   "version": "1.0.1",
   "description": "A customizable star rating display",
   "main": "dist/index.js",
-  "files": [
-    "/dist"
-  ],
+  "types": "/dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "flow": "flow",
+    "test": "echo \"Error: no test specified\" && exit 1",
     "prebuild": "rm -rf dist/*",
     "build-js": "./node_modules/.bin/babel src --out-dir dist  --extensions .ts,.tsx --source-maps inline --copy-files",
     "build-types": "tsc --emitDeclarationOnly",
     "build": "npm run build-js && npm run build-types",
+    "prepare": "npm run build",
     "start:dev": "node config/webpack-dev-server.js",
-    "clean-examples": "rm -rf dist-examples/*",
-    "build-pages": "npm run clean-examples && webpack --config config/webpack-prod-config.js",
+    "build-pages": "rm -rf dist-examples/* && webpack --config config/webpack-prod-config.js",
     "start:prod": "npm run build-pages && serve dist-examples",
     "start:prod-nb": "serve dist-examples",
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
-    "clean-styleguide": "rm -rf styleguidistHtml/*",
-    "predeploy": "npm run clean-styleguide && npm run styleguide:build",
+    "predeploy": "rm -rf styleguidistHtml/* && npm run styleguide:build",
     "deploy": "gh-pages -d styleguidistHtml"
   },
   "repository": {
