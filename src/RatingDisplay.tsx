@@ -16,7 +16,7 @@ const RatingDisplay = ({
   className,
   value = 0,
   numberStars = 5,
-  fontSize = 34,
+  size = 34,
   starRenderer: starRendererProp,
   showRatingOnHover = false,
 }: RatingDisplayProps) => {
@@ -26,16 +26,13 @@ const RatingDisplay = ({
   React.useEffect(() => {
     // set CSS custom property values for this component
     if (inputRef.current) {
-      inputRef.current.style.setProperty(
-        '--star-size',
-        String(fontSize) + 'px'
-      );
+      inputRef.current.style.setProperty('--star-size', String(size) + 'px');
       inputRef.current.style.setProperty(
         '--partial-percentage',
         String((value % 1) * 100) + '%'
       );
     }
-  }, [fontSize, value]);
+  }, [size, value]);
 
   return (
     <div
@@ -49,7 +46,6 @@ const RatingDisplay = ({
             key={`star-${i}`}
             value={value}
             index={i}
-            fontSize={fontSize}
             starRenderer={starRenderer}
           />
         );

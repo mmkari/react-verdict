@@ -27,7 +27,7 @@ export type RatingDisplayProps = {|
   /** number of stars */
   numberStars: number,
   /** font-size of stars in pixels (when using default renderer) */
-  fontSize: number,
+  size: number,
   /** prop to override default renderer */
   starRenderer?: StarRendererFunction,
   /** shows rating value in a "title" attribute on hover */
