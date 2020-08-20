@@ -12,7 +12,7 @@ const CustomStarRendererStar = ({ className, color, index, type }) => {
         colored: type === 'front',
       })}
     >
-      {String.fromCharCode(9705)}
+      {String.fromCharCode(9728)}
     </div>
   );
 };
