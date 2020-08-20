@@ -5,7 +5,7 @@ import './defaultStarRenderer.css';
 
 // import {} from './types';
 
-const defaultStarRenderer = ({ type }): React.Node => {
+const defaultStarRenderer = ({ type }): React.ReactNode => {
   return (
     <div
       className={classnames('DefaultStarComponent', {
