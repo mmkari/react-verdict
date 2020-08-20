@@ -15,7 +15,7 @@ module.exports = merge(common, {
   output: {
     filename: "[chunkhash]_[name].js",
     path: paths.appBuild,
-    publicPath: "/react-star-picker/" // use when deploying to github pages: needs project name in url
+    publicPath: "/react-verdict/" // use when deploying to github pages: needs project name in url
     // publicPath: "/" // use to serve prod-build locally
   },
   plugins: [
