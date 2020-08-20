@@ -1,8 +1,12 @@
 ```jsx
 import Rating from 'react-verdict';
 
-const myStarRenderer = ({ index }) => {
-  return String.fromCharCode(10022);
+const myStarRenderer = ({ index, type }) => {
+  return (
+    <span style={{ color: type === 'front' ? 'red' : '#DDDDDD' }}>
+      {String.fromCharCode(10022)}
+    </span>
+  );
 };
 
 <Rating
