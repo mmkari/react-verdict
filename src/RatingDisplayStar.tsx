@@ -10,16 +10,11 @@ import {
   RatingDisplayProps,
 } from './types';
 
-const RatingDisplayStar = ({
-  className,
-  value,
-  index,
-  starRenderer,
-}: StarProps) => {
+const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
   const colored = value > index; // has colored front if rating exceeds index value
 
   return (
-    <div className={classnames('RatingDisplayStar', className)}>
+    <div className="RatingDisplayStar">
       {colored && (
         <span
           className={classnames('RatingDisplayStar-colored', {

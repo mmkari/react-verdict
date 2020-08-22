@@ -37,7 +37,7 @@ const RatingDisplay = ({
   return (
     <div
       className={classnames('RatingDisplay', className)}
-      title={showRatingOnHover ? value : undefined}
+      title={showRatingOnHover ? String(value) : undefined}
       ref={inputRef}
     >
       {[...Array(numberStars).keys()].map((i) => {
