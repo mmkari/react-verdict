@@ -11,7 +11,7 @@ import {
 } from './types';
 
 const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
-  const colored = value > index; // has colored front if rating exceeds index value
+  const colored = value > index;
 
   return (
     <div className="RatingDisplayStar">
@@ -24,11 +24,11 @@ const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
           {starRenderer({
             value,
             index,
-            type: 'front',
+            type: 'filled',
           })}
         </span>
       )}
-      {starRenderer({ value, index, type: 'rear' })}
+      {starRenderer({ value, index, type: 'empty' })}
     </div>
   );
 };

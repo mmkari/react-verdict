@@ -9,7 +9,7 @@ const CustomStarRendererStar = ({ className, color, index, type }) => {
   return (
     <div
       className={classnames('CustomStarRendererStar', className, {
-        colored: type === 'front',
+        colored: type === 'filled',
       })}
     >
       {String.fromCharCode(9728)}

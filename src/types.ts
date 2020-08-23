@@ -6,7 +6,7 @@ export type StarRendererFunctionProps = {
   /** index of star */
   index: number;
   /** type of star to be rendered (background or foreground star) */
-  type: 'front' | 'rear';
+  type: 'filled' | 'empty';
 };
 export type StarRendererFunction = (
   StarRendererFunctionProps

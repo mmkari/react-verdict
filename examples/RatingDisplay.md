@@ -3,7 +3,7 @@ import Rating from 'react-verdict';
 
 const myStarRenderer = ({ index, type }) => {
   return (
-    <span style={{ color: type === 'front' ? 'red' : '#DDDDDD' }}>
+    <span style={{ color: type === 'filled' ? 'red' : '#DDDDDD' }}>
       {String.fromCharCode(10022)}
     </span>
   );

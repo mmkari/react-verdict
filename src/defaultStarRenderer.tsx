@@ -9,7 +9,7 @@ const defaultStarRenderer = ({ type }): React.ReactNode => {
   return (
     <div
       className={classnames('DefaultStarComponent', {
-        colored: type === 'front',
+        colored: type === 'filled',
       })}
     >
       {String.fromCharCode(9733)}
