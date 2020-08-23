@@ -11,11 +11,11 @@ import {
 } from './types';
 
 const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
-  const colored = value > index;
+  const isFilled = value > index;
 
   return (
     <div className="RatingDisplayStar">
-      {colored && (
+      {isFilled && (
         <div
           className={classnames('RatingDisplayStar-filled', {
             partial: value - index < 1,
