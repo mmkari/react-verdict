@@ -1,4 +1,5 @@
 .RatingDisplayStar {
+  display: flex;
   position: relative;
   align-self: center;
   z-index: 10;
