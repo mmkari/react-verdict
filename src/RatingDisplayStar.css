@@ -7,7 +7,7 @@
   font-size: var(--star-size);
 }
 
-.RatingDisplayStar-colored {
+.RatingDisplayStar-filled {
   position: absolute;
   width: 100%;
 
@@ -15,6 +15,6 @@
   overflow: hidden;
 }
 
-.RatingDisplayStar-colored.partial {
+.RatingDisplayStar-filled.partial {
   width: var(--partial-percentage);
 }

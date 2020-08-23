@@ -16,8 +16,8 @@ const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
   return (
     <div className="RatingDisplayStar">
       {colored && (
-        <span
-          className={classnames('RatingDisplayStar-colored', {
+        <div
+          className={classnames('RatingDisplayStar-filled', {
             partial: value - index < 1,
           })}
         >
@@ -26,9 +26,11 @@ const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
             index,
             type: 'filled',
           })}
-        </span>
+        </div>
       )}
-      {starRenderer({ value, index, type: 'empty' })}
+      <div className="RatingDisplayStar-empty">
+        {starRenderer({ value, index, type: 'empty' })}
+      </div>
     </div>
   );
 };
