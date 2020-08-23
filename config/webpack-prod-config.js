@@ -10,10 +10,13 @@ module.exports = merge(common, {
     app: paths.appIndexJs
   },
   mode: "production",
+  // Enable sourcemaps for debugging webpack's output.
+  devtool: "source-map",
   output: {
     filename: "[chunkhash]_[name].js",
     path: paths.appBuild,
-    publicPath: "/react-star-picker/"
+    publicPath: "/react-verdict/" // use when deploying to github pages: needs project name in url
+    // publicPath: "/" // use to serve prod-build locally
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -23,27 +26,10 @@ module.exports = merge(common, {
     }),
     new ExtractTextPlugin("styles.css")
   ],
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appExamples)],
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/react"]
-          }
-        }
-      },
-      {
-        test: /\.(css|scss)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appExamples)],
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
-      }
-    ]
-  },
+  resolve: {
+    // Add '.ts' and '.tsx' as resolvable extensions.
+    extensions: [".ts", ".tsx"]
+  },  
   // customize optimization if necessary:
   // optimization: {
   //   splitChunks: {

@@ -1,0 +1,20 @@
+.RatingDisplayStar {
+  display: flex;
+  position: relative;
+  align-self: center;
+  z-index: 10;
+
+  font-size: var(--star-size);
+}
+
+.RatingDisplayStar-filled {
+  position: absolute;
+  width: 100%;
+
+  z-index: 11;
+  overflow: hidden;
+}
+
+.RatingDisplayStar-filled.partial {
+  width: var(--partial-percentage);
+}

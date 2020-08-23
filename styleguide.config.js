@@ -20,7 +20,9 @@ module.exports = {
   },
   getExampleFilename(componentPath) {
     if (componentPath.indexOf('src') > -1) {
-      return componentPath.replace(/src/, 'examples').replace(/\.jsx?$/, '.md');
+      return componentPath
+        .replace(/src/, 'examples')
+        .replace(/\.[tj]sx?$/, '.md');
     }
     return componentPath;
   },
@@ -34,7 +36,7 @@ module.exports = {
       sections: [
         {
           name: 'Installation',
-          content: 'examples/installation.md',
+          content: 'examples/Documentation_installation.md',
         },
         // {
         //   name: 'Configuration',
@@ -46,43 +48,47 @@ module.exports = {
       name: 'Components',
       // content: 'examples/Components.md',
       usageMode: 'expand', // 'hide' | 'collapse' | 'expand'
-      components: ['src/RatingDisplay.jsx'],
+      components: ['src/RatingDisplay.tsx'],
       skipComponentsWithoutExample: true,
       // sectionDepth: 1,
     },
     {
-      name: 'Examples',
+      name: 'Props',
       // components: 'dist/ui/*.js',
       exampleMode: 'hide', // 'hide' | 'collapse' | 'expand'
       usageMode: 'hide', // 'hide' | 'collapse' | 'expand'
       // sectionDepth: 1,
-      // content: 'examples/Examples.md',
-
       sections: [
         {
-          name: 'Default',
-          content: 'examples/Examples_default.md',
+          name: 'value',
+          content: 'examples/Props_value.md',
         },
         {
-          name: 'Font-size',
-          content: 'examples/Examples_fontSize.md',
+          name: 'size',
+          content: 'examples/Props_size.md',
         },
         {
-          name: 'Number of stars',
-          content: 'examples/Examples_numberStars.md',
+          name: 'numberStars',
+          content: 'examples/Props_numberStars.md',
         },
         {
-          name: 'Show Rating on Hover',
-          content: 'examples/Examples_hoverRating.md',
+          name: 'showRatingOnHover',
+          content: 'examples/Props_showRatingOnHover.md',
         },
 
         {
-          name: 'Custom Star',
-          content: 'examples/Examples_customStar.md',
-        },
-        {
-          name: 'Custom Star with Animation',
-          content: 'examples/Examples_customStarAnimated.md',
+          name: 'starRenderer',
+          content: 'examples/Props_starRenderer.md',
+          sections: [
+            {
+              name: 'simple',
+              content: 'examples/Props_starRenderer_simple.md',
+            },
+            {
+              name: 'animated',
+              content: 'examples/Props_starRenderer_animated.md',
+            },
+          ],
         },
         // {
         //   name: 'XXX',
@@ -92,7 +98,7 @@ module.exports = {
     },
   ],
   webpackConfig: wpc,
-  components: 'src/**/*.{js,jsx}',
+  components: 'src/*.{ts,tsx}',
   styleguideDir: 'styleguidistHtml',
   pagePerSection: true,
   moduleAliases: {
@@ -101,7 +107,7 @@ module.exports = {
   require: [path.join(__dirname, 'examples/Examples_overrides.css')],
   updateExample(props, exampleFilePath) {
     const { settings, lang } = props;
-    if (typeof settings.file === 'string') {
+    if (settings && typeof settings.file === 'string') {
       const filepath = path.resolve(exampleFilePath, settings.file);
       delete settings.file;
       return {

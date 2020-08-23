@@ -9,7 +9,8 @@ A customizable star rating **display**
 </div>
 
 ### Examples
-[See examples in Styleguide.](https://mmkari.github.io/react-verdict/#/Examples)
+
+[See examples in Styleguide.](https://mmkari.github.io/react-verdict/#/Props)
 
 ## Component APIs
 

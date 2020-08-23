@@ -18,25 +18,8 @@ module.exports = merge(common, {
       }
     })
   ],
-  module: {
-    rules: [
-      {
-        test: /\.(js|jsx)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appExamples)],
-        exclude: /(node_modules)/,
-        use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/react"]
-          }
-        }
-      },
-      {
-        test: /\.(css|scss)$/,
-        include: [path.resolve(paths.appSrc), path.resolve(paths.appExamples)],
-        exclude: /node_modules/,
-        use: ['style-loader', 'css-loader'],
-      }
-    ]
-  }
+  resolve: {
+      // Add '.ts' and '.tsx' as resolvable extensions.
+      extensions: [".ts", ".tsx"]
+  },
 });
