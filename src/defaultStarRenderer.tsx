@@ -3,9 +3,9 @@ import classnames from 'classnames';
 
 import './defaultStarRenderer.css';
 
-// import {} from './types';
+import { StarRendererFunction } from './types';
 
-const defaultStarRenderer = ({ type }): React.ReactNode => {
+const defaultStarRenderer: StarRendererFunction = ({ type }) => {
   return (
     <div
       className={classnames('DefaultStarComponent', {
