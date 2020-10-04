@@ -9,10 +9,34 @@ A customizable star rating **display**
 <img src=docs/banner_stars.png width=273 height=66 />
 </div>
 
-### Examples
+# Installation
+
+`npm i react-verdict`
+
+# Usage
+
+```jsx
+import Rating from 'react-verdict';
+
+const Example = () => {
+  return (
+    <div>
+      <Rating value={2.4} />
+    </div>
+  );
+};
+```
+
+# Documentation
+
+## Props
+
+| Prop Name         | Description                                                        |
+| ----------------- | ------------------------------------------------------------------ |
+| value             | numeric value of the displayed rating                              |
+| size              | numeric font-size of the rendered "star" characters                |
+| numberStars       | number of "stars" in the display                                   |
+| showRatingOnHover | boolean for showing the value in a hover tooltip (title attribute) |
+| starRenderer      | custom function to override the default "star" renderer            |
 
 [See examples in Styleguide.](https://mmkari.github.io/react-verdict/#/Props)
-
-## Component APIs
-
-- [`<Rating />`](https://mmkari.github.io/react-verdict/#/Components?id=ratingdisplay)
