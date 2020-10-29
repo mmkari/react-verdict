@@ -6,7 +6,7 @@ A customizable star rating **display**
 [![npm version](https://img.shields.io/npm/v/react-verdict.svg)](https://www.npmjs.com/package/react-verdict)
 [![npm license](https://img.shields.io/npm/l/react-verdict.svg)](https://github.com/mmkari/react-verdict/blob/master/LICENSE)
 
-<img src=docs/banner_stars.png width=273 height=66 />
+<img src="https://raw.githubusercontent.com/mmkari/react-verdict/master/docs/banner_stars.png" width=273 height=66 />
 </div>
 
 # Installation
