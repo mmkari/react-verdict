@@ -1,7 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-import styled, { keyframes } from 'styled-components';
-import classnames from 'classnames';
 import Rating from '../src/RatingDisplay';
 
 const Examples = () => {

@@ -3,8 +3,6 @@
   position: relative;
   align-self: center;
   z-index: 10;
-
-  font-size: var(--star-size);
 }
 
 .RatingDisplayStar-filled {
@@ -13,8 +11,4 @@
 
   z-index: 11;
   overflow: hidden;
-}
-
-.RatingDisplayStar-filled.partial {
-  width: var(--partial-percentage);
 }

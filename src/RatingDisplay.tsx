@@ -5,40 +5,21 @@ import './RatingDisplay.css';
 import RatingDisplayStar from './RatingDisplayStar';
 import defaultStarRenderer from './defaultStarRenderer';
 
-import {
-  StarRendererFunctionProps,
-  StarRendererFunction,
-  StarProps,
-  RatingDisplayProps,
-} from './types';
+import { RatingDisplayProps } from './types';
 
 const RatingDisplay = ({
   className,
   value = 0,
   numberStars = 5,
   size = 34,
-  starRenderer: starRendererProp,
+  starRenderer = defaultStarRenderer,
   showRatingOnHover = false,
 }: RatingDisplayProps) => {
-  const starRenderer = starRendererProp || defaultStarRenderer;
-  const inputRef = React.createRef<HTMLDivElement>();
-
-  React.useEffect(() => {
-    // set CSS custom property values for this component
-    if (inputRef.current) {
-      inputRef.current.style.setProperty('--star-size', String(size) + 'px');
-      inputRef.current.style.setProperty(
-        '--partial-percentage',
-        String((value % 1) * 100) + '%'
-      );
-    }
-  }, [size, value]);
-
   return (
     <div
+      style={{ fontSize: `${size}px` }}
       className={classnames('RatingDisplay', className)}
       title={showRatingOnHover ? String(value) : undefined}
-      ref={inputRef}
     >
       {[...Array(numberStars).keys()].map((i) => {
         return (
