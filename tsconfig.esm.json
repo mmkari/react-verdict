@@ -14,5 +14,5 @@
 
     "emitDeclarationOnly": true
   },
-  "exclude": ["./docusaurus/**/*", "./dist/**/*"]
+  "exclude": ["./docusaurus/**/*", "./lib/**/*"]
 }

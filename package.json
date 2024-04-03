@@ -2,8 +2,18 @@
   "name": "react-verdict",
   "version": "2.0.4",
   "description": "A customizable star rating display",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js"
+    },
+    "./styles.css": {
+      "import": "./lib/esm/styles.css"
+    }
+  },
+  "types": "lib/esm/index.d.ts",
+  "main": "lib/esm/index.js",
   "scripts": {
     "prepare": "npm run build",
     "build": "rm -rf lib/* && rollup --config"
