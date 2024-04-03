@@ -9,7 +9,7 @@ export type StarRendererFunctionProps = {
   type: 'filled' | 'empty';
 };
 export type StarRendererFunction = (
-  StarRendererFunctionProps
+  parameters: StarRendererFunctionProps
 ) => React.ReactNode;
 export type StarProps = {
   /** current rating value */
