@@ -13,13 +13,16 @@ import {
 const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
   const isFilled = value > index;
 
+  const partial = value - index < 1;
+
   return (
     <div className="RatingDisplayStar">
       {isFilled && (
         <div
           className={classnames('RatingDisplayStar-filled', {
-            partial: value - index < 1,
+            partial,
           })}
+          style={{ width: `${(partial ? value % 1 : 1) * 100}%` }}
         >
           {starRenderer({
             value,
