@@ -1,25 +1,21 @@
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
+const path = require('path');
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  favicon: 'img/favicon.ico',
+  title: 'React Verdict',
+  tagline: 'A highly customizable star rating display',
 
-  // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  url: 'https://mmkari.github.io',
+  baseUrl: '/react-verdict/',
 
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'mmkari', // Usually your GitHub org/user name.
+  projectName: 'react-verdict', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'log',
   onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.ico',
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -35,18 +31,8 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -54,25 +40,57 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      'docusaurus-plugin-react-docgen-typescript',
+      {
+        /** @type {import('docusaurus-plugin-react-docgen-typescript').Options} */
+        // pass in a single string or an array of strings
+        src: ['../src/*.tsx'], // , '!path/to/**/*test.*'
+        parserOptions: {
+          // pass parserOptions to react-docgen-typescript
+          // here is a good starting point which filters out all
+          // types from react
+          propFilter: (prop, component) => {
+            if (prop.parent) {
+              return !prop.parent.fileName.includes('@types/react');
+            }
+
+            return true;
+          },
+        },
+      },
+    ],
+    [
+      'docusaurus-plugin-module-alias',
+      {
+        alias: {
+          'react-verdict': path.resolve(__dirname, '../src/index.ts'),
+          react: path.resolve(__dirname, './node_modules/react'),
+          'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+        },
+      },
+    ],
+  ],
+
   themeConfig: {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'Home',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          type: 'doc',
+          docId: '/category/getting-started',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Getting Started',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/mmkari/react-verdict',
           label: 'GitHub',
           position: 'right',
         },
@@ -91,37 +109,24 @@ const config: Config = {
           ],
         },
         {
-          title: 'Community',
-          items: [
-            {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
-              label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
-            },
-            {
-              label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
-            },
-          ],
-        },
-        {
           title: 'More',
           items: [
+            // {
+            //   label: 'Blog',
+            //   to: '/blog',
+            // },
             {
-              label: 'Blog',
-              to: '/blog',
+              label: 'NPM',
+              href: 'https://www.npmjs.com/package/react-verdict',
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/mmkari/react-verdict',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
