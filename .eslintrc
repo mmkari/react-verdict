@@ -15,6 +15,11 @@
     "react/default-props-match-prop-types": [
       0,
       { "allowRequiredDefaults": false }
-    ]
+    ],
+    "react/jsx-filename-extension": [
+      1,
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    ],
+    "import/extensions": [2, "never"]
   }
 }
