@@ -3,12 +3,7 @@ import classnames from 'classnames';
 
 import './RatingDisplayStar.css';
 
-import {
-  StarRendererFunctionProps,
-  StarRendererFunction,
-  StarProps,
-  RatingDisplayProps,
-} from './types';
+import { StarProps } from './types';
 
 const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
   const isFilled = value > index;

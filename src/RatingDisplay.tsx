@@ -5,12 +5,7 @@ import './RatingDisplay.css';
 import RatingDisplayStar from './RatingDisplayStar';
 import defaultStarRenderer from './defaultStarRenderer';
 
-import {
-  StarRendererFunctionProps,
-  StarRendererFunction,
-  StarProps,
-  RatingDisplayProps,
-} from './types';
+import { RatingDisplayProps } from './types';
 
 const RatingDisplay = ({
   className,
