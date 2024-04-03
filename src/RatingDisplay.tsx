@@ -26,10 +26,10 @@ const RatingDisplay = ({
   React.useEffect(() => {
     // set CSS custom property values for this component
     if (inputRef.current) {
-      inputRef.current.style.setProperty('--star-size', String(size) + 'px');
+      inputRef.current.style.setProperty('--star-size', `${String(size)}px`);
       inputRef.current.style.setProperty(
         '--partial-percentage',
-        String((value % 1) * 100) + '%'
+        `${String((value % 1) * 100)}%`
       );
     }
   }, [size, value]);
