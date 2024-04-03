@@ -10,7 +10,7 @@
     "isolatedModules": true,
     "forceConsistentCasingInFileNames": true,
 
-    "moduleResolution": "Bundler",
+    "moduleResolution": "classic",
 
     "emitDeclarationOnly": true
   },
