@@ -1,11 +1,10 @@
 node_modules
 # dist
-dist-examples
-styleguidistHtml
-config
 docs
 src
 examples
-styleguide.config.js
-tsconfig.json
+tsconfig.base.json
+tsconfig.esm.json
 .*
+docusaurus
+rollup.config.mjs
