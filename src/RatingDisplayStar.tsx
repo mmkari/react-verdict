@@ -11,6 +11,7 @@ const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
 
   return (
     <div className="RatingDisplayStar">
+      {/* Render fill in front of empty star */}
       {hasFill && (
         <RatingDisplayStarContent //
           value={value}

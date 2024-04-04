@@ -8,7 +8,7 @@ const RatingDisplayStarContent = ({
   starRenderer,
   filled,
 }: StarContentProps) => {
-  // Filled part may be partial
+  // Filled part of star may be partial
   const partial = filled && value - index < 1;
 
   return (
