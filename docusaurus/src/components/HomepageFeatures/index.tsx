@@ -1,6 +1,8 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Link from '@docusaurus/Link';
+import CodeIconSvg from '@site/static/img/codeIcon.svg';
 
 type FeatureItem = {
   title: string;
@@ -41,7 +43,7 @@ const FeatureList: FeatureItem[] = [
   },
 ];
 
-function Feature({title, Svg, description}: FeatureItem) {
+function Feature({ title, Svg, description }: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
@@ -68,3 +70,42 @@ export default function HomepageFeatures(): JSX.Element {
     </section>
   );
 }
+
+export const CodeIcon = () => {
+  return (
+    <div className="Icon" style={{ width: 24, height: 24, color: 'red' }}>
+      <CodeIconSvg />
+    </div>
+  );
+};
+
+export const CodeIconLink = ({ to }) => {
+  return (
+    <Link className="" to={to}>
+      <CodeIcon />
+    </Link>
+  );
+};
+
+export const LinkContainer = ({ to, content }) => {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <div>{content}</div>
+      <CodeIconLink to={to} />
+    </div>
+  );
+};
+
+export const CenteredContainer = ({ children }) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+      }}
+    >
+      {children}
+    </div>
+  );
+};

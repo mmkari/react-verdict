@@ -1,0 +1,7 @@
+/* definitions for a "simpleRating" class */
+.RatingDisplay.purpleRating .RatingDisplayStar {
+  color: lightgray;
+}
+.RatingDisplay.purpleRating .RatingDisplayStar.filled {
+  color: purple;
+}
