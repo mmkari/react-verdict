@@ -6,7 +6,7 @@ export type StarRendererFunctionProps = {
   /** index of star */
   index: number;
   /** type of star to be rendered (background or foreground star) */
-  type: 'filled' | 'empty';
+  filled: boolean;
 };
 export type StarRendererFunction = (
   parameters: StarRendererFunctionProps
@@ -23,7 +23,6 @@ export type StarProps = {
 
 export type StarContentProps = StarProps & {
   filled: boolean;
-  style: React.CSSProperties;
 };
 
 export type RatingDisplayProps = {
