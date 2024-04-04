@@ -4,31 +4,32 @@ import classnames from 'classnames';
 import './RatingDisplayStar.css';
 
 import { StarProps } from './types';
+import RatingDisplayStarContent from './RatingDisplayStarContent';
 
 const RatingDisplayStar = ({ value, index, starRenderer }: StarProps) => {
-  const isFilled = value > index;
+  const hasFill = value > index;
 
   const partial = value - index < 1;
 
   return (
     <div className="RatingDisplayStar">
-      {isFilled && (
-        <div
-          className={classnames('RatingDisplayStar-filled', {
-            partial,
-          })}
+      {hasFill && (
+        <RatingDisplayStarContent //
+          value={value}
+          index={index}
+          starRenderer={starRenderer}
+          filled={true}
           style={{ width: `${(partial ? value % 1 : 1) * 100}%` }}
-        >
-          {starRenderer({
-            value,
-            index,
-            type: 'filled',
-          })}
-        </div>
+        />
       )}
-      <div className="RatingDisplayStar-empty">
-        {starRenderer({ value, index, type: 'empty' })}
-      </div>
+
+      <RatingDisplayStarContent //
+        value={value}
+        index={index}
+        starRenderer={starRenderer}
+        filled={false}
+        style={{ width: '100%' }}
+      />
     </div>
   );
 };

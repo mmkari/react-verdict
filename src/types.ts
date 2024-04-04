@@ -11,6 +11,7 @@ export type StarRendererFunctionProps = {
 export type StarRendererFunction = (
   parameters: StarRendererFunctionProps
 ) => React.ReactNode;
+
 export type StarProps = {
   /** current rating value */
   value: number;
@@ -18,6 +19,11 @@ export type StarProps = {
   index: number;
   /** star-renderer function */
   starRenderer: StarRendererFunction;
+};
+
+export type StarContentProps = StarProps & {
+  filled: boolean;
+  style: React.CSSProperties;
 };
 
 export type RatingDisplayProps = {
