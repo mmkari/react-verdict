@@ -1,4 +1,4 @@
-`react-verdict` exports a star-rating display as its default export:
+# Usage
 
 ```jsx
 import Rating from 'react-verdict';
