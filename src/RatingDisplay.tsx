@@ -10,7 +10,7 @@ import { RatingDisplayProps } from './types';
 const RatingDisplay = ({
   className,
   value = 0,
-  numberStars = 5,
+  starCount = 5,
   size = 34,
   starRenderer = defaultStarRenderer,
   showRatingOnHover = false,
@@ -21,7 +21,7 @@ const RatingDisplay = ({
       className={classnames('RatingDisplay', className)}
       title={showRatingOnHover ? String(value) : undefined}
     >
-      {[...Array(numberStars).keys()].map((i) => {
+      {[...Array(starCount).keys()].map((i) => {
         return (
           <RatingDisplayStar
             key={`star-${i}`}

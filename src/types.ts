@@ -31,7 +31,7 @@ export type RatingDisplayProps = {
   /** current rating value of the display */
   value?: number;
   /** number of stars */
-  numberStars: number;
+  starCount: number;
   /** font-size of stars in pixels (when using default renderer) */
   size: number;
   /** prop to override default renderer */

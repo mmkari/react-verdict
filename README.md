@@ -35,7 +35,7 @@ const Example = () => {
 | ----------------- | ------------------------------------------------------------------ |
 | value             | numeric value of the displayed rating                              |
 | size              | numeric font-size of the rendered "star" characters                |
-| numberStars       | number of "stars" in the display                                   |
+| starCount         | number of "stars" in the display                                   |
 | showRatingOnHover | boolean for showing the value in a hover tooltip (title attribute) |
 | starRenderer      | custom function to override the default "star" renderer            |
 

@@ -27,13 +27,13 @@ const MyCustomRating = ({
   className,
   value,
   size = 55,
-  numberStars = 4,
+  starCount = 4,
 }) => (
   <Rating
     className={classnames('MyCustomRating', className)}
     value={value}
     size={size}
-    numberStars={numberStars}
+    starCount={starCount}
     showRatingOnHover={true}
     starRenderer={myStarRenderer}
   />
