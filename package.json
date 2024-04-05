@@ -16,6 +16,7 @@
   "main": "lib/esm/index.js",
   "scripts": {
     "prepare": "npm run build",
+    "lint": "eslint .",
     "build": "rm -rf lib/* && rollup --config"
   },
   "repository": {
