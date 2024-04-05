@@ -1,10 +1,6 @@
 {
   "parser": "babel-eslint",
-  "extends": [
-    "airbnb",
-    "plugin:prettier/recommended",
-    "plugin:flowtype/recommended"
-  ],
+  "extends": ["airbnb", "plugin:prettier/recommended"],
   "plugins": ["react", "jsx-a11y", "import"],
   "rules": {
     "linebreak-style": ["error", "windows"],
@@ -14,12 +10,12 @@
     "react/require-default-props": [0, { "forbidDefaultForRequired": false }],
     "react/default-props-match-prop-types": [
       0,
-      { "allowRequiredDefaults": false }
+      { "allowRequiredDefaults": false },
     ],
     "react/jsx-filename-extension": [
       1,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+      { "extensions": [".js", ".jsx", ".ts", ".tsx"] },
     ],
-    "import/extensions": [2, "never"]
-  }
+    "import/extensions": [2, "never"],
+  },
 }
