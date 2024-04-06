@@ -101,7 +101,14 @@ export const CodeIconLink = ({ to }) => {
 
 export const ReloadIconButton = ({ onClick }) => {
   return (
-    <button onClick={onClick}>
+    <button
+      onClick={onClick}
+      style={{
+        border: 'none',
+        background: 'transparent',
+        cursor: 'pointer',
+      }}
+    >
       <ReloadIcon />
     </button>
   );
