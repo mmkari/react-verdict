@@ -29,7 +29,7 @@ export type RatingDisplayProps = {
   /** custom class name */
   className?: string;
   /** current rating value of the display */
-  value?: number;
+  value: number;
   /** number of stars */
   starCount: number;
   /** font-size of stars in pixels (when using default renderer) */

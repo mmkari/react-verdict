@@ -9,7 +9,7 @@ import { RatingDisplayProps } from './types';
 
 const RatingDisplay = ({
   className,
-  value = 0,
+  value,
   starCount = 5,
   size = 34,
   starRenderer = defaultStarRenderer,
