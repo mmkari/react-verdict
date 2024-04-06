@@ -2,7 +2,8 @@
 sidebar_position: 2
 ---
 
-import {SimpleRating, AnimatedRating} from '@site/src/components/examples/source-code/SimpleRating';
+import {SimpleRating} from '@site/src/components/examples/source-code/SimpleRating';
+import {AnimatedRating} from '@site/src/components/examples/source-code/AnimatedRating';
 
 import {CenteredContainer, LinkContainer, Link} from '@site/src/components/HomepageFeatures';
 

@@ -50,7 +50,7 @@ export const SimpleRating = () => {
   );
 };
 
-const ParentComponent = () => {
+export const AnimatedRating = () => {
   const [mounted, setMounted] = React.useState(false);
   return (
     <div style={{ display: 'flex', height: '50px', alignItems: 'center' }}>
@@ -64,5 +64,3 @@ const ParentComponent = () => {
     </div>
   );
 };
-
-export default ParentComponent;
