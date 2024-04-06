@@ -52,17 +52,11 @@ export const SimpleRating = () => {
 };
 
 export const AnimatedRating = () => {
-  const [mounted, setMounted] = React.useState(false);
+  const [key, setKey] = React.useState(0);
   return (
     <div style={{ display: 'flex', height: '50px', alignItems: 'center' }}>
-      <ReloadIconButton onClick={() => setMounted(!mounted)} />
-      <button
-        onClick={() => setMounted(!mounted)}
-        style={{ marginRight: '5px' }}
-      >
-        {`Click to ${mounted ? 'unmount' : 'mount'}`}
-      </button>
-      {mounted && <SimpleRating />}
+      <ReloadIconButton onClick={() => setKey((p) => p + 1)} />
+      <SimpleRating key={key} />
     </div>
   );
 };
