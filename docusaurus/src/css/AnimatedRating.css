@@ -1,0 +1,30 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes colorFill {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.starContainer {
+  transition: width 1s;
+  animation: fadeIn 0.5s;
+}
+
+.starContainer.colored {
+  width: 0; /* start state for animation */
+  overflow: hidden;
+
+  animation: colorFill;
+  animation-fill-mode: forwards;
+}
