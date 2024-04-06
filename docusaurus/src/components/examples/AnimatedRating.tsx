@@ -3,7 +3,7 @@ import SourceCodeSection from '@site/src/components/SourceCodeSection';
 import MyComponentSource from '!!raw-loader!@site/src/components/examples/source-code/AnimatedRating';
 import MyComponentStyleSource from '!!raw-loader!@site/src/css/AnimatedRating.css';
 
-const BluePicker = () => {
+const AnimatedRating = () => {
   return (
     <SourceCodeSection
       componentSource={MyComponentSource}
@@ -12,4 +12,4 @@ const BluePicker = () => {
   );
 };
 
-export default BluePicker;
+export default AnimatedRating;
