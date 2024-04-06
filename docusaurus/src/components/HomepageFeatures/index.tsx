@@ -3,6 +3,7 @@ import Heading from '@theme/Heading';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import CodeIconSvg from '@site/static/img/codeIcon.svg';
+import ReloadIconSvg from '@site/static/img/reloadIcon.svg';
 
 type FeatureItem = {
   title: string;
@@ -79,11 +80,30 @@ export const CodeIcon = () => {
   );
 };
 
+export const ReloadIcon = () => {
+  return (
+    <div
+      className="Icon"
+      style={{ width: '1em', height: '1em', fill: 'black' }}
+    >
+      <ReloadIconSvg />
+    </div>
+  );
+};
+
 export const CodeIconLink = ({ to }) => {
   return (
     <Link className="" to={to}>
       <CodeIcon />
     </Link>
+  );
+};
+
+export const ReloadIconButton = ({ onClick }) => {
+  return (
+    <button onClick={onClick}>
+      <ReloadIcon />
+    </button>
   );
 };
 

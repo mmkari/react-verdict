@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Rating from 'react-verdict';
+import { ReloadIconButton } from '../../HomepageFeatures';
 
 const StarSvg = ({ fill }: { fill: string }) => (
   <svg
@@ -54,6 +55,7 @@ export const AnimatedRating = () => {
   const [mounted, setMounted] = React.useState(false);
   return (
     <div style={{ display: 'flex', height: '50px', alignItems: 'center' }}>
+      <ReloadIconButton onClick={() => setMounted(!mounted)} />
       <button
         onClick={() => setMounted(!mounted)}
         style={{ marginRight: '5px' }}
