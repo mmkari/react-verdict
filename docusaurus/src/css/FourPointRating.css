@@ -1,0 +1,7 @@
+/* definitions for a "fourPointRating" class */
+.RatingDisplay.fourPointRating .RatingDisplayStarContent {
+  color: #dddddd;
+}
+.RatingDisplay.fourPointRating .RatingDisplayStarContent.filled {
+  color: red;
+}
