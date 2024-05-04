@@ -4,6 +4,7 @@ import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 import CodeIconSvg from '@site/static/img/codeIcon.svg';
 import ReloadIconSvg from '@site/static/img/reloadIcon.svg';
+import ReplayIconSvg from '@site/static/img/replay.svg';
 
 type FeatureItem = {
   title: string;
@@ -86,7 +87,7 @@ export const ReloadIcon = () => {
       className="Icon"
       style={{ width: '1em', height: '1em', fill: 'black' }}
     >
-      <ReloadIconSvg />
+      <ReplayIconSvg />
     </div>
   );
 };
