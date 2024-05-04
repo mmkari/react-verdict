@@ -17,11 +17,13 @@
 }
 
 .starContainer {
-  transition: width 1s;
-  animation: fadeIn 0.5s;
+  transition: width 1s forwards;
+  animation: fadeIn 0.5s forwards;
 }
 
-.starContainer.colored {
+.starContainer.filled {
+  background: red;
+  opacity: 0;
   width: 0; /* start state for animation */
   overflow: hidden;
 
